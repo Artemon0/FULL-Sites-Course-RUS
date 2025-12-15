@@ -362,6 +362,24 @@ section {
     display: block;
 }
 
+.editor-panel textarea {
+    width: 100%;
+    height: 400px;
+    padding: 1rem;
+    border: none;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none;
+    outline: none;
+}
+
+.editor-panel textarea::selection {
+    background: #264f78;
+}
+
 .CodeMirror {
     height: 400px;
     font-size: 14px;

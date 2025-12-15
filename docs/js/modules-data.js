@@ -14,7 +14,7 @@ const modulesData = [
         ],
         duration: '1-2 недели',
         project: 'Личное портфолио',
-        link: '../module-1-html/theory/01-introduction.md'
+        link: 'https://github.com/Artemon0/FULL-Sites-Course-RUS/tree/main/module-1-html'
     },
     {
         id: 2,
@@ -30,7 +30,7 @@ const modulesData = [
         ],
         duration: '2-3 недели',
         project: 'Лендинг страница',
-        link: '../module-2-css/theory/01-basics.md'
+        link: 'https://github.com/Artemon0/FULL-Sites-Course-RUS/tree/main/module-2-css'
     },
     {
         id: 3,
@@ -46,7 +46,7 @@ const modulesData = [
         ],
         duration: '1-2 недели',
         project: 'Интерактивная галерея',
-        link: '../module-3-advanced-css/theory/01-animations.md'
+        link: 'https://github.com/Artemon0/FULL-Sites-Course-RUS/tree/main/module-3-advanced-css'
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ const modulesData = [
         ],
         duration: '2-3 недели',
         project: 'Todo и Калькулятор',
-        link: '../module-4-javascript/theory/01-basics.md'
+        link: 'https://github.com/Artemon0/FULL-Sites-Course-RUS/tree/main/module-4-javascript'
     },
     {
         id: 5,
@@ -78,7 +78,7 @@ const modulesData = [
         ],
         duration: '1-2 недели',
         project: 'Приложение погоды',
-        link: '../module-5-advanced-js/theory/01-async.md'
+        link: 'https://github.com/Artemon0/FULL-Sites-Course-RUS/tree/main/module-5-advanced-js'
     },
     {
         id: 6,
@@ -94,6 +94,6 @@ const modulesData = [
         ],
         duration: '2-4 недели',
         project: 'Интернет-магазин',
-        link: '../module-6-final-project/README.md'
+        link: 'https://github.com/Artemon0/FULL-Sites-Course-RUS/tree/main/module-6-final-project'
     }
 ];
