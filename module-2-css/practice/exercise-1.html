@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнение CSS 1: Стилизация текста и блоков</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .task-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .task-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .task-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .task-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .example-box {
+            background: #d1ecf1;
+            border-left: 5px solid #0dcaf0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .result-box {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .demo-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .demo-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+        }
+        
+        .demo-box {
+            border: 2px dashed #667eea;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 CSS Упражнения</h1>
+            <p>Практика стилизации элементов</p>
+        </header>
+
+        <!-- Задание 1 -->
+        <div class="task-card">
+            <h2>Задание 1: Стилизация текста</h2>
+            
+            <div class="task-box">
+                <h3>📝 Задача:</h3>
+                <p>Создайте страницу с различными стилями текста:</p>
+                <ul>
+                    <li>Заголовок с градиентным фоном</li>
+                    <li>Параграф с тенью текста</li>
+                    <li>Текст с разными шрифтами</li>
+                    <li>Цитату с особым оформлением</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>💡 Пример CSS:</h3>
+                <pre><code>.gradient-text {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.quote {
+    font-style: italic;
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    color: #666;
+}</code></pre>
+            </div>
+
+            <div class="result-box">
+                <h3>✅ Результат:</h3>
+                <div style="background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem; font-weight: bold;">
+                    Градиентный текст
+                </div>
+                <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-top: 15px;">
+                    Текст с тенью
+                </p>
+                <blockquote style="font-style: italic; border-left: 4px solid #667eea; padding-left: 20px; color: #666; margin-top: 15px;">
+                    "Это цитата с особым оформлением"
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Задание 2 -->
+        <div class="task-card">
+            <h2>Задание 2: Box Model</h2>
+            
+            <div class="task-box">
+                <h3>📝 Задача:</h3>
+                <p>Создайте карточку товара с:</p>
+                <ul>
+                    <li>Отступами (padding)</li>
+                    <li>Внешними отступами (margin)</li>
+                    <li>Рамкой (border)</li>
+                    <li>Скруглёнными углами</li>
+                    <li>Тенью</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>💡 Пример CSS:</h3>
+                <pre><code>.product-card {
+    width: 300px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: white;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}</code></pre>
+            </div>
+
+            <div class="result-box">
+                <h3>✅ Результат:</h3>
+                <div style="width: 300px; padding: 20px; margin: 20px auto; border: 2px solid #e0e0e0; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: white;">
+                    <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; margin-bottom: 15px;"></div>
+                    <h3 style="margin-bottom: 10px;">Название товара</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Описание товара с основными характеристиками</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #667eea;">1,999₽</span>
+                        <button class="demo-button">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Задание 3 -->
+        <div class="task-card">
+            <h2>Задание 3: Кнопки с эффектами</h2>
+            
+            <div class="task-box">
+                <h3>📝 Задача:</h3>
+                <p>Создайте 3 разные кнопки:</p>
+                <ol>
+                    <li>Кнопка с градиентом и тенью</li>
+                    <li>Кнопка с рамкой (outline)</li>
+                    <li>Кнопка с анимацией при наведении</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h3>💡 Пример CSS:</h3>
+                <pre><code>.btn-gradient {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}</code></pre>
+            </div>
+
+            <div class="result-box">
+                <h3>✅ Результат:</h3>
+                <div class="demo-box">
+                    <button class="demo-button" style="margin: 10px;">Градиентная кнопка</button>
+                    <button style="background: transparent; color: #667eea; border: 2px solid #667eea; padding: 12px 30px; border-radius: 25px; cursor: pointer; margin: 10px;">Outline кнопка</button>
+                    <button class="demo-button" style="margin: 10px;">Анимированная кнопка</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Задание 4 -->
+        <div class="task-card">
+            <h2>Задание 4: Создайте свою карточку</h2>
+            
+            <div class="task-box">
+                <h3>📝 Финальное задание:</h3>
+                <p>Объедините все изученные техники и создайте карточку профиля с:</p>
+                <ul>
+                    <li>Аватаром (круглое изображение)</li>
+                    <li>Именем с градиентом</li>
+                    <li>Описанием с тенью текста</li>
+                    <li>Кнопкой "Подписаться"</li>
+                    <li>Эффектами при наведении</li>
+                </ul>
+            </div>
+
+            <div class="result-box">
+                <h3>✅ Пример результата:</h3>
+                <div style="width: 350px; margin: 20px auto; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">👤</div>
+                    <h2 style="background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">Иван Иванов</h2>
+                    <p style="color: #666; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin-bottom: 20px;">Frontend разработчик</p>
+                    <button class="demo-button">Подписаться</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+            <p><strong>🎯 Совет:</strong> Экспериментируйте с цветами, размерами и эффектами!</p>
+            <p style="margin-top: 10px;"><a href="../theory/01-basics.md" style="color: #667eea; text-decoration: none;">← Вернуться к теории</a></p>
+        </div>
+    </div>
+</body>
+</html>

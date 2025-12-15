@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Анимации - Примеры</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .demo-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .demo-box {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        
+        /* Анимация 1: Пульсация */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
+        .pulse-box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* Анимация 2: Вращение */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .spin-box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            animation: spin 3s linear infinite;
+        }
+        
+        /* Анимация 3: Прыжки */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        
+        .bounce-box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        /* Анимация 4: Появление */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        /* Анимация 5: Загрузка */
+        @keyframes loading {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #667eea;
+            border-radius: 50%;
+            animation: loading 1s linear infinite;
+        }
+        
+        /* Анимация 6: Волна */
+        @keyframes wave {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+        }
+        
+        .wave-container {
+            position: relative;
+            width: 200px;
+            height: 100px;
+        }
+        
+        .wave-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            left: 50%;
+            animation: wave 1s ease-in-out infinite;
+        }
+        
+        .wave-dot:nth-child(1) { animation-delay: 0s; }
+        .wave-dot:nth-child(2) { animation-delay: 0.2s; left: 60%; }
+        .wave-dot:nth-child(3) { animation-delay: 0.4s; left: 70%; }
+        
+        code {
+            display: block;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ CSS Анимации</h1>
+        
+        <div class="demo-grid">
+            <!-- Пульсация -->
+            <div class="demo-card">
+                <h2>Пульсация</h2>
+                <div class="demo-box">
+                    <div class="pulse-box"></div>
+                </div>
+                <code>@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+animation: pulse 2s infinite;</code>
+            </div>
+            
+            <!-- Вращение -->
+            <div class="demo-card">
+                <h2>Вращение</h2>
+                <div class="demo-box">
+                    <div class="spin-box"></div>
+                </div>
+                <code>@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+animation: spin 3s linear infinite;</code>
+            </div>
+            
+            <!-- Прыжки -->
+            <div class="demo-card">
+                <h2>Прыжки</h2>
+                <div class="demo-box">
+                    <div class="bounce-box"></div>
+                </div>
+                <code>@keyframes bounce {
+  0%, 100% { translateY(0); }
+  50% { translateY(-30px); }
+}
+animation: bounce 1s infinite;</code>
+            </div>
+            
+            <!-- Появление -->
+            <div class="demo-card">
+                <h2>Появление</h2>
+                <div class="demo-box">
+                    <div class="fade-box"></div>
+                </div>
+                <code>@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code>
+            </div>
+            
+            <!-- Загрузка -->
+            <div class="demo-card">
+                <h2>Загрузка</h2>
+                <div class="demo-box">
+                    <div class="loader"></div>
+                </div>
+                <code>.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #667eea;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+}</code>
+            </div>
+            
+            <!-- Волна -->
+            <div class="demo-card">
+                <h2>Волна</h2>
+                <div class="demo-box">
+                    <div class="wave-container">
+                        <div class="wave-dot"></div>
+                        <div class="wave-dot"></div>
+                        <div class="wave-dot"></div>
+                    </div>
+                </div>
+                <code>animation: wave 1s infinite;
+animation-delay: 0.2s;</code>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Упражнение 1: Основы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💻 JavaScript Упражнения</h1>
+            <p>Практика основ программирования</p>
+        </header>
+
+        <div class="task-card">
+            <h2>Задание 1: Калькулятор</h2>
+            <div class="task-box">
+                <p>Создайте простой калькулятор с кнопками +, -, *, /</p>
+            </div>
+            <div class="demo-box">
+                <input type="number" id="num1" placeholder="Число 1">
+                <input type="number" id="num2" placeholder="Число 2">
+                <div class="buttons">
+                    <button onclick="calculate('+')">+</button>
+                    <button onclick="calculate('-')">-</button>
+                    <button onclick="calculate('*')">×</button>
+                    <button onclick="calculate('/')">/</button>
+                </div>
+                <div id="result" class="result"></div>
+            </div>
+        </div>
+
+        <div class="task-card">
+            <h2>Задание 2: Счётчик</h2>
+            <div class="demo-box">
+                <h3 id="counter">0</h3>
+                <button onclick="increment()">+1</button>
+                <button onclick="decrement()">-1</button>
+                <button onclick="reset()">Сброс</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

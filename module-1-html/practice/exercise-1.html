@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнение 1: Создание базовой страницы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        .task {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .example {
+            background: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #0dcaf0;
+            margin: 20px 0;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Упражнение 1: Создание базовой HTML страницы</h1>
+        <p>Практика работы с основными HTML элементами</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#task1">Задание 1</a></li>
+            <li><a href="#task2">Задание 2</a></li>
+            <li><a href="#task3">Задание 3</a></li>
+            <li><a href="../theory/01-introduction.md">Назад к теории</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="task1">
+            <h2>Задание 1: Структура документа</h2>
+            <div class="task">
+                <h3>📝 Задача:</h3>
+                <p>Создайте HTML страницу "О себе" со следующей структурой:</p>
+                <ul>
+                    <li>Заголовок первого уровня с вашим именем</li>
+                    <li>Параграф с кратким описанием</li>
+                    <li>Заголовок второго уровня "Мои интересы"</li>
+                    <li>Маркированный список с 5 интересами</li>
+                    <li>Заголовок второго уровня "Контакты"</li>
+                    <li>Ссылку на ваш email (используйте <code>mailto:</code>)</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>💡 Пример решения:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;О себе&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Иван Иванов&lt;/h1&gt;
+    &lt;p&gt;Я начинающий веб-разработчик, изучаю HTML, CSS и JavaScript.&lt;/p&gt;
+    
+    &lt;h2&gt;Мои интересы&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Программирование&lt;/li&gt;
+        &lt;li&gt;Чтение книг&lt;/li&gt;
+        &lt;li&gt;Путешествия&lt;/li&gt;
+        &lt;li&gt;Фотография&lt;/li&gt;
+        &lt;li&gt;Спорт&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Контакты&lt;/h2&gt;
+    &lt;p&gt;Email: &lt;a href="mailto:ivan@example.com"&gt;ivan@example.com&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="task2">
+            <h2>Задание 2: Работа с изображениями и ссылками</h2>
+            <div class="task">
+                <h3>📝 Задача:</h3>
+                <p>Создайте страницу "Мои любимые сайты" с:</p>
+                <ul>
+                    <li>Заголовком страницы</li>
+                    <li>Изображением (можно использовать placeholder: <code>https://via.placeholder.com/300x200</code>)</li>
+                    <li>Списком из 5 ссылок на ваши любимые сайты</li>
+                    <li>Каждая ссылка должна открываться в новой вкладке (<code>target="_blank"</code>)</li>
+                    <li>Добавьте описание под каждой ссылкой</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>💡 Подсказка:</h3>
+                <p>Используйте атрибут <code>target="_blank"</code> для открытия ссылки в новой вкладке:</p>
+                <pre><code>&lt;a href="https://example.com" target="_blank"&gt;Название сайта&lt;/a&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="task3">
+            <h2>Задание 3: Семантическая разметка</h2>
+            <div class="task">
+                <h3>📝 Задача:</h3>
+                <p>Создайте страницу блога с использованием семантических тегов:</p>
+                <ul>
+                    <li><code>&lt;header&gt;</code> - шапка с названием блога</li>
+                    <li><code>&lt;nav&gt;</code> - навигация (Главная, О блоге, Контакты)</li>
+                    <li><code>&lt;main&gt;</code> - основной контент</li>
+                    <li><code>&lt;article&gt;</code> - 2-3 статьи блога</li>
+                    <li>Каждая статья должна содержать:
+                        <ul>
+                            <li><code>&lt;h2&gt;</code> - заголовок статьи</li>
+                            <li><code>&lt;time&gt;</code> - дата публикации</li>
+                            <li><code>&lt;p&gt;</code> - текст статьи</li>
+                        </ul>
+                    </li>
+                    <li><code>&lt;aside&gt;</code> - боковая панель с информацией об авторе</li>
+                    <li><code>&lt;footer&gt;</code> - футер с копирайтом</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>💡 Пример структуры:</h3>
+                <pre><code>&lt;header&gt;
+    &lt;h1&gt;Мой блог&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;О блоге&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Контакты&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Первая статья&lt;/h2&gt;
+        &lt;time datetime="2025-01-15"&gt;15 января 2025&lt;/time&gt;
+        &lt;p&gt;Текст статьи...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;aside&gt;
+    &lt;h3&gt;Об авторе&lt;/h3&gt;
+    &lt;p&gt;Информация об авторе...&lt;/p&gt;
+&lt;/aside&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Мой блог&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Проверка знаний</h2>
+            <div class="task">
+                <h3>Ответьте на вопросы:</h3>
+                <ol>
+                    <li>Какой тег используется для создания заголовка первого уровня?</li>
+                    <li>Как создать ссылку, которая открывается в новой вкладке?</li>
+                    <li>Какой атрибут обязателен для тега <code>&lt;img&gt;</code>?</li>
+                    <li>В чём разница между <code>&lt;ul&gt;</code> и <code>&lt;ol&gt;</code>?</li>
+                    <li>Зачем нужны семантические теги?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Дополнительные задания</h2>
+            <div class="task">
+                <h3>Для продвинутых:</h3>
+                <ol>
+                    <li>Создайте страницу рецепта с ингредиентами (список) и пошаговой инструкцией (нумерованный список)</li>
+                    <li>Создайте страницу с вашим резюме, используя все изученные теги</li>
+                    <li>Создайте простую галерею из 6 изображений с подписями</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; text-align: center;">
+        <p><a href="../theory/01-introduction.md">← Вернуться к теории</a> | <a href="exercise-2.html">Следующее упражнение →</a></p>
+    </footer>
+</body>
+</html>

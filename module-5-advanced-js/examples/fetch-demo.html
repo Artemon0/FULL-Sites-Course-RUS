@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API - Примеры</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .user-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        
+        .user-info h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .user-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        code {
+            display: block;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Fetch API Примеры</h1>
+        
+        <!-- Пример 1: GET запрос -->
+        <div class="demo-section">
+            <h2>1. GET запрос - Получить пользователей</h2>
+            <button onclick="getUsers()">Загрузить пользователей</button>
+            <div id="usersResult" class="result"></div>
+            
+            <code>async function getUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await response.json();
+  return users;
+}</code>
+        </div>
+        
+        <!-- Пример 2: POST запрос -->
+        <div class="demo-section">
+            <h2>2. POST запрос - Создать пост</h2>
+            <input type="text" id="postTitle" placeholder="Заголовок" style="width: 100%; padding: 10px; margin: 10px 0; border: 2px solid #667eea; border-radius: 8px;">
+            <textarea id="postBody" placeholder="Текст поста" style="width: 100%; padding: 10px; margin: 10px 0; border: 2px solid #667eea; border-radius: 8px; min-height: 100px;"></textarea>
+            <button onclick="createPost()">Создать пост</button>
+            <div id="postResult" class="result"></div>
+            
+            <code>async function createPost(title, body) {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title, body, userId: 1 })
+  });
+  return await response.json();
+}</code>
+        </div>
+        
+        <!-- Пример 3: Обработка ошибок -->
+        <div class="demo-section">
+            <h2>3. Обработка ошибок</h2>
+            <button onclick="fetchWithError()">Запрос с ошибкой</button>
+            <div id="errorResult" class="result"></div>
+            
+            <code>async function fetchWithError() {
+  try {
+    const response = await fetch('https://invalid-url.com');
+    if (!response.ok) throw new Error('HTTP error');
+    return await response.json();
+  } catch (error) {
+    console.error('Ошибка:', error);
+  }
+}</code>
+        </div>
+    </div>
+
+    <script>
+        // Пример 1: GET запрос
+        async function getUsers() {
+            const resultDiv = document.getElementById('usersResult');
+            resultDiv.innerHTML = '<div class="loading">Загрузка...</div>';
+            
+            try {
+                const response = await fetch('https://jsonplaceholder.typicode.com/users');
+                const users = await response.json();
+                
+                resultDiv.innerHTML = users.slice(0, 5).map(user => `
+                    <div class="user-card">
+                        <div class="user-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            ${user.name.charAt(0)}
+                        </div>
+                        <div class="user-info">
+                            <h3>${user.name}</h3>
+                            <p>📧 ${user.email}</p>
+                            <p>🏢 ${user.company.name}</p>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">Ошибка: ${error.message}</p>`;
+            }
+        }
+        
+        // Пример 2: POST запрос
+        async function createPost() {
+            const title = document.getElementById('postTitle').value;
+            const body = document.getElementById('postBody').value;
+            const resultDiv = document.getElementById('postResult');
+            
+            if (!title || !body) {
+                resultDiv.innerHTML = '<p style="color: red;">Заполните все поля!</p>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="loading">Отправка...</div>';
+            
+            try {
+                const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        body: body,
+                        userId: 1
+                    })
+                });
+                
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <div style="background: #d4edda; padding: 15px; border-radius: 8px; border-left: 4px solid #28a745;">
+                        <h3 style="color: #155724; margin-bottom: 10px;">✅ Пост создан!</h3>
+                        <p><strong>ID:</strong> ${data.id}</p>
+                        <p><strong>Заголовок:</strong> ${data.title}</p>
+                        <p><strong>Текст:</strong> ${data.body}</p>
+                    </div>
+                `;
+                
+                document.getElementById('postTitle').value = '';
+                document.getElementById('postBody').value = '';
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">Ошибка: ${error.message}</p>`;
+            }
+        }
+        
+        // Пример 3: Обработка ошибок
+        async function fetchWithError() {
+            const resultDiv = document.getElementById('errorResult');
+            resultDiv.innerHTML = '<div class="loading">Попытка запроса...</div>';
+            
+            try {
+                const response = await fetch('https://jsonplaceholder.typicode.com/invalid-endpoint');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ошибка! Статус: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `<p>Данные получены: ${JSON.stringify(data)}</p>`;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div style="background: #f8d7da; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545;">
+                        <h3 style="color: #721c24; margin-bottom: 10px;">❌ Ошибка!</h3>
+                        <p><strong>Сообщение:</strong> ${error.message}</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                            Это нормально! Мы специально сделали запрос к несуществующему endpoint, чтобы показать обработку ошибок.
+                        </p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

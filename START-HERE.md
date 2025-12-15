@@ -10,7 +10,7 @@
 
 **Самый простой способ!** Учитесь прямо в браузере с интерактивным редактором кода.
 
-👉 **[Открыть онлайн-курс](https://yourusername.github.io/html-css-js-course/)**
+👉 **[Открыть онлайн-курс](https://artemon0.github.io/FULL-Sites-Course-RUS/)**
 
 **Преимущества:**
 - ✅ Не нужно ничего устанавливать
@@ -24,11 +24,11 @@
 
 **Шаг 1: Скачайте курс**
 ```bash
-git clone https://github.com/yourusername/html-css-js-course.git
-cd html-css-js-course
+git clone https://github.com/Artemon0/FULL-Sites-Course-RUS.git
+cd FULL-Sites-Course-RUS
 ```
 
-Или скачайте ZIP: [Download](https://github.com/yourusername/html-css-js-course/archive/refs/heads/main.zip)
+Или скачайте ZIP: [Download](https://github.com/Artemon0/FULL-Sites-Course-RUS/archive/refs/heads/main.zip)
 
 **Шаг 2: Установите редактор**
 - Скачайте [VS Code](https://code.visualstudio.com/)
@@ -57,7 +57,7 @@ cd html-css-js-course
 
 ### 3️⃣ Начните обучение
 Откройте первый урок:
-- **Онлайн:** Перейдите на [сайт курса](https://yourusername.github.io/html-css-js-course/)
+- **Онлайн:** Перейдите на [сайт курса](https://artemon0.github.io/FULL-Sites-Course-RUS/)
 - **Локально:** Откройте `module-1-html/theory/01-introduction.md`
 
 ## 🎓 Рекомендуемый путь
@@ -117,8 +117,8 @@ cd html-css-js-course
 - [RESOURCES.md](RESOURCES.md) - Полезные ссылки
 
 ### Сообщество:
-- [GitHub Issues](https://github.com/yourusername/html-css-js-course/issues) - Вопросы и баги
-- [Discussions](https://github.com/yourusername/html-css-js-course/discussions) - Обсуждения
+- [GitHub Issues](https://github.com/Artemon0/FULL-Sites-Course-RUS/issues) - Вопросы и баги
+- [Discussions](https://github.com/Artemon0/FULL-Sites-Course-RUS/discussions) - Обсуждения
 - Stack Overflow - Технические вопросы
 
 ## 🎯 Ваша цель
@@ -133,7 +133,7 @@ cd html-css-js-course
 ## 🚀 Готовы начать?
 
 ### Онлайн:
-👉 **[Открыть курс](https://yourusername.github.io/html-css-js-course/)**
+👉 **[Открыть курс](https://artemon0.github.io/FULL-Sites-Course-RUS/)**
 
 ### Локально:
 1. Откройте `QUICK-START.md`
