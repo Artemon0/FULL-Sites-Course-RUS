@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Интернет-магазин электроники - смартфоны, ноутбуки, планшеты">
+    <title>TechShop - Интернет-магазин электроники</title>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Логотип -->
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🛒</span>
+                    <span class="logo-text">TechShop</span>
+                </a>
+                
+                <!-- Навигация -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Главная</a></li>
+                        <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                        <li><a href="#" class="nav-link">О нас</a></li>
+                        <li><a href="#" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Поиск -->
+                <div class="search">
+                    <input type="text" class="search-input" placeholder="Поиск товаров...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                
+                <!-- Действия -->
+                <div class="header-actions">
+                    <button class="icon-btn" id="favoritesBtn">
+                        ❤️
+                        <span class="badge" id="favoritesBadge">0</span>
+                    </button>
+                    <button class="icon-btn" id="cartBtn">
+                        🛒
+                        <span class="badge" id="cartBadge">0</span>
+                    </button>
+                    <button class="icon-btn" id="userBtn">👤</button>
+                </div>
+                
+                <!-- Мобильное меню -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный контент -->
+    <main>
+        <!-- Героическая секция -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Добро пожаловать в TechShop</h1>
+                    <p class="hero-subtitle">Лучшая электроника по выгодным ценам</p>
+                    <a href="catalog.html" class="btn btn-primary btn-lg">Перейти в каталог</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Категории -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Категории</h2>
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- Категории будут добавлены через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные товары -->
+        <section class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Популярные товары</h2>
+                    <a href="catalog.html" class="link">Смотреть все →</a>
+                </div>
+                <div class="products-grid" id="popularProducts">
+                    <!-- Товары будут добавлены через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Новинки -->
+        <section class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Новинки</h2>
+                    <a href="catalog.html?filter=new" class="link">Смотреть все →</a>
+                </div>
+                <div class="products-grid" id="newProducts">
+                    <!-- Товары будут добавлены через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h3 class="feature-title">Быстрая доставка</h3>
+                        <p class="feature-text">Доставим ваш заказ в течение 1-2 дней</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3 class="feature-title">Гарантия качества</h3>
+                        <p class="feature-text">Официальная гарантия на все товары</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <h3 class="feature-title">Удобная оплата</h3>
+                        <p class="feature-text">Оплата картой, наличными или в рассрочку</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3 class="feature-title">Возврат 14 дней</h3>
+                        <p class="feature-text">Вернём деньги, если товар не подошёл</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">TechShop</h3>
+                    <p class="footer-text">Интернет-магазин электроники с доставкой по всей России</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Каталог</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Смартфоны</a></li>
+                        <li><a href="#">Ноутбуки</a></li>
+                        <li><a href="#">Планшеты</a></li>
+                        <li><a href="#">Наушники</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>📞 8 (800) 123-45-67</li>
+                        <li>📧 info@techshop.ru</li>
+                        <li>📍 Москва, ул. Примерная, 1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechShop. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

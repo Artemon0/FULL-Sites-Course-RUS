@@ -1,0 +1,142 @@
+/* Стили для страницы модулей */
+
+.page-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.modules-detail {
+    padding: 4rem 0;
+}
+
+.module-detail {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.module-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.module-detail-header .module-icon {
+    font-size: 4rem;
+}
+
+.module-detail-header h2 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.module-meta {
+    color: var(--secondary);
+    font-size: 0.95rem;
+}
+
+.module-detail-content h3 {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin: 1.5rem 0 1rem;
+}
+
+.module-detail-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.module-detail-content ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--secondary);
+}
+
+.module-detail-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.lessons-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.lesson-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--light);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.lesson-link:hover {
+    border-color: var(--primary);
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.lesson-link.project {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.lesson-link.project:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .page-hero p {
+        font-size: 1.1rem;
+    }
+
+    .module-detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .module-detail-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .lessons-list {
+        grid-template-columns: 1fr;
+    }
+}
